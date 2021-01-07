@@ -18,6 +18,6 @@ python3 sensor.py
 ```
 
 ### Other
-- Datasheet: https://www.silabs.com/documents/public/data-sheets/Si7021-A20.pdf
+- Si7021-A20 Datasheet: https://www.silabs.com/documents/public/data-sheets/Si7021-A20.pdf
 - Product page: https://pine64.com/product/pine64-humidity-temperature-sensor-module/
 
