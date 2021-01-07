@@ -1,4 +1,4 @@
-# PMSD001-humidity-temperature-sensor-module
+# Pine64 humidity temperature sensor module (PMSD001)
 
 A script to read the temperature and humidity from the Pine64 PMSD001 sensor
 
