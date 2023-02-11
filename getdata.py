@@ -36,8 +36,12 @@ temperature = getTemperature(bus)
 humidity = getHumidity(bus)
 
 print(json.dumps({
-  "temperature": format(temperature, '.2f'),
-  "humidity": format(humidity, '.2f')
+  "host": "Raspberri Pi2",
+  "sourcetype": "pmsd001",
+  "event": {
+    "temperature": format(temperature, '.2f'),
+    "humidity": format(humidity, '.2f')
+  }
 }))
 
 bus.close()
