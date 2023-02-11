@@ -31,9 +31,14 @@ def getHumidity(bus):
   humidity = swapWordBytes(humidity)
   return calculateHumidity(humidity)
 
-bus = SMBus(BUS)
-temperature = getTemperature(bus)
-humidity = getHumidity(bus)
+try:
+  bus = SMBus(BUS)
+  temperature = getTemperature(bus)
+  humidity = getHumidity(bus)
+except:
+  bus = None
+  temperature = -100
+  humidity = -100
 
 print(json.dumps({
   "host": "Raspberri Pi2",
@@ -44,4 +49,5 @@ print(json.dumps({
   }
 }))
 
-bus.close()
+if bus is not None:
+  bus.close()
