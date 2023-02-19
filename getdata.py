@@ -1,7 +1,4 @@
-#!/usr/bin/python3
 from smbus2 import SMBus
-import time
-import json
 
 # https://www.silabs.com/documents/public/data-sheets/Si7021-A20.pdf
 
@@ -40,14 +37,19 @@ except:
   temperature = -100
   humidity = -100
 
-print(json.dumps({
-  "host": "Raspberri Pi2",
-  "sourcetype": "pmsd001",
-  "event": {
-    "temperature": format(temperature, '.2f'),
-    "humidity": format(humidity, '.2f')
-  }
-}))
-
 if bus is not None:
   bus.close()
+
+
+if __name__ == '__main__':
+  import json, sys, time
+
+  print(json.dumps({
+    "host": "Raspberri Pi2",
+    "sourcetype": "pmsd001",
+    "time": time.time(),
+    "event": {
+      "temperature": format(temperature, '.2f'),
+      "humidity": format(humidity, '.2f')
+    }
+  }))
