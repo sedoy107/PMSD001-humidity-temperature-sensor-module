@@ -44,7 +44,7 @@ if bus is not None:
 if __name__ == '__main__':
   import json, sys, time
 
-  print(json.dumps({
+  data = {
     "host": "Raspberri Pi2",
     "sourcetype": "pmsd001",
     "time": time.time(),
@@ -52,4 +52,6 @@ if __name__ == '__main__':
       "temperature": format(temperature, '.2f'),
       "humidity": format(humidity, '.2f')
     }
-  }))
+  }
+
+  print(json.dumps(data))
