@@ -17,7 +17,7 @@ int get_data(int addr, int reg) {
 
   Wire.requestFrom(addr, 2);
   while(!Wire.available());
-  return ((Wire.read() << 8) | Wire.read());
+  return (((int(Wire.read()) & 0xff) << 8) | (int(Wire.read()) & 0xff));
 }
 
 double get_temperature() {
